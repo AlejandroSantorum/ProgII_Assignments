@@ -360,7 +360,7 @@ int* graph_getConnectionsTo(Graph *g, int toId){
       return NULL;
    }
 
-   nConnections = (int *) malloc(graph_getNumberOfConnectionsFrom(g, toId)*sizeof(int));
+   nConnections = (int *) malloc(graph_getNumberOfConnectionsTo(g, toId)*sizeof(int));
    if(!nConnections){ /* Error */
       printf("Graph Error: unable to get the array of connection from the node %d in graph_getConnectionsTo function\n", toId);
       return NULL;
@@ -404,7 +404,7 @@ int graph_print(FILE *pf, Graph *g){
    }
 
    num = fprintf(pf, "NumNodes=%d, NumConnections=%d:\n", g->numNodes, graph_getNedges(g));
-
+   
    for(i=0; i<g->numNodes; i++){
       num += fprintf(pf, "[%d, %s] ->", node_getId(g->nodes[i]), node_getName(g->nodes[i]));
       for(j=0; j<g->numNodes; j++){

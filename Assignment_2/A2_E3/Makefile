@@ -13,7 +13,7 @@ text :
 	rm -f *.txt core $(EXE)
 
 $(EXE) : % : %.o stack_element.o element_int.o graph.o node.o
-	$(CC) $(CFLAGS) $(LIBS) -o $@ $@.o stack_element.o element_int.o graph.o node.o types.h
+	$(CC) $(CFLAGS) $(LIBS) -o $@ $@.o stack_element.o element_int.o graph.o node.o
 
 element_int.o : element_int.c element_int.h
 	$(CC) $(CFLAGS) -c $<
