@@ -1,0 +1,6 @@
+thisIsAnString
+Madrid
+Barcelona
+NewYork
+London
+Trying spaces
